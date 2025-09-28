@@ -1,19 +1,58 @@
-# todo-list
-A simple console-based to-do list built with Python
 
-To use, simply run `main.py`.
+# Console-Based To-Do List
 
-This program uses JSON files to store tasks, giving each list a file and each task an object within the file. It was designed to function like a shell, having some commands. This is the output of the command `help` for example:
-```
-List commands: create <list name>, select <list name>, lists, open <list name>, save <list name>
-Task commansds: add <task name> [weight], delete <task number>, tasks, complete <task number>
-Other commands: help, exit
-```
-As this program uses a shell-like input, you must put any text inputs (such as names) in quotes if they contain spaces. For example,
-`add laundry 5` would work, but `add fold laundry 5` would have to be written as `add "fold laundry" 5`.
+This is a simple, interactive console-based to-do list application written in Python. It allows users to manage tasks directly from the terminal, with persistent storage using JSON files.
 
-Tasks have three properties: a name, a weight, and a status (complete/incomplete). Weight can describe a number of things, but to me it means how much mental energy a task will take.
+## Features
 
-List names are always converted to lower-case, and are thus not case-sensitive. Task names are case-sensitive, but no commands use task names as an argument.
+- Add new tasks with a versatile "weight" property for priority or cost
+- List all tasks
+- Mark tasks as completed
+- Remove tasks
+- Persistent storage in JSON format
+- Simple command interface with support for quoted phrases
 
-The `exit` command will automatically save all of the lists before ending the program. Lists are saved to the same directory as `main.py`
+## Getting Started
+
+### Prerequisites
+
+- Python 3.7 or higher
+
+### Installation
+
+1. Clone or download this repository.
+2. Open a terminal in the project directory.
+3. Run the program:
+	```
+	python main.py
+	```
+
+## Usage
+
+When running, enter commands at the prompt. Supported commands include:
+
+- `add "task description" [weight]` — Add a new task. Example: `add "Buy milk" 2`
+- `delete [task number]` — Remove a task
+- `tasks` — Show all tasks
+- `complete [task number]` — Mark a task as completed
+- `create <list name>` — Create a new list
+- `select <list name>` — Select a list
+- `lists` — Show all lists
+- `open <list name>` — Open a list from a file
+- `save <list name>` — Save a list to a file
+- `help` — Show help
+- `exit` — Exit the program
+
+Quoted phrases are supported for multi-word task descriptions.
+
+## Data Storage
+
+Tasks are stored in JSON files in the project directory. Each task includes:
+
+- `name`: Task description
+- `weight`: Task weight (optional)
+- `status`: Complete/incomplete
+
+## Author
+
+Created by noahhodge04 with help from GitHub Copilot.
